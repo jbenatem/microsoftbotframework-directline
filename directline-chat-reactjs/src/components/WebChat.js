@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import Chatbutton from './chatbutton';
-import Chatbody from './chatbody';
-import Chatheader from './chatheader';
+import Chatbox from './chatbox';
 
 class Webchat extends Component{
     render(){
         return(
             <div className="webchat">
-                <Chatheader/>
-                <Chatbody/>
+                <Chatbox/>
+                <Chatbutton/>
             </div>
         );
     }

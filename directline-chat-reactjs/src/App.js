@@ -1,5 +1,5 @@
 import './App.css';
-import WebChat from './components/WebChat';
+import WebChat from './components/webchat';
 
 function App() {
   return (

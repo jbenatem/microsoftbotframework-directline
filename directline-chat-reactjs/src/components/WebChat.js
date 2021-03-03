@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import ChatButton from './ChatButton';
+import Chatbutton from './chatbutton';
+import Chatbody from './chatbody';
+import Chatheader from './chatheader';
 
-class WebChat extends Component{
+class Webchat extends Component{
     render(){
         return(
-            <ChatButton/>
+            <div className="webchat">
+                <Chatheader/>
+                <Chatbody/>
+            </div>
         );
     }
 }
-export default WebChat;
+export default Webchat;

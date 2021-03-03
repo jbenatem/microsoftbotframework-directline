@@ -20,3 +20,47 @@
   width: 40px;
   height: 40px;
 }
+
+.chatbody{
+  height:400px;
+  width:350px;
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  box-shadow: 0px 2px 5px #666;
+}
+
+.chatheader{
+  background-color: #FF0000;
+  border-radius: 10px 10px 0 0;
+  height: 45px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0px 2px 5px #666;
+}
+
+.chatheader-text{
+  margin-left: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.chatheader-hidebutton{
+  margin-right: 22px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.webchat{
+  height: 445px;
+  width: 350px;
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px 2px 5px #666;
+}

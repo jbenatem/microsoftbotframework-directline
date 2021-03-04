@@ -3,11 +3,48 @@ import Chatbutton from './chatbutton';
 import Chatbox from './chatbox';
 
 class Webchat extends Component{
+    state = {
+        show : false,
+        title : "React Webchat Sample",
+        secret : "",
+        imageUrl : "https://i.pinimg.com/originals/c8/c0/1d/c8c01d94b7ffe4073ae847acdca693de.png",
+        buttonColor : "",
+        headerColor : ""
+    }
+    
+    openChat = () => {
+        let show = this.state.show;
+        show = true;
+        this.setState({show});
+    }
+
+    closeChat = () => {
+        let show = this.state.show;
+        show = false;
+        this.setState({show});
+    }
+    
     render(){
         return(
             <div className="webchat">
-                <Chatbox/>
-                <Chatbutton/>
+                {
+                    this.state.show?
+                        <Chatbox 
+                        closeChat = {this.closeChat}
+                        title = {this.state.title}
+                        secret = {this.state.secret}
+                        />
+                    :null
+                }
+                {
+                    !this.state.show?
+                        <Chatbutton openChat = {this.openChat}
+                        imageUrl = {this.state.imageUrl}
+                        buttonColor = {this.state.buttonColor}
+                        />
+                    :null
+                }
+                
             </div>
         );
     }

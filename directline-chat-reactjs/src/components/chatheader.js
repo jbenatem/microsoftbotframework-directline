@@ -5,9 +5,9 @@ class Chatheader extends Component{
         return(
             <div className="chatheader">
                 <div className="chatheader-text">
-                    <p>React Webchat Sample</p>
+                    <p>{this.props.title}</p>
                 </div>
-                <div className="chatheader-hidebutton">
+                <div className="chatheader-hidebutton" onClick={this.props.closeChat}>
                     <p>X</p>
                 </div>
             </div>

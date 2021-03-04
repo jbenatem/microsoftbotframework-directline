@@ -6,8 +6,13 @@ class Chatbox extends Component{
     render(){
         return(
             <div className="chatbox">
-                <Chatheader/>
-                <Chatbody/>
+                <Chatheader
+                    closeChat = {this.props.closeChat}
+                    title = {this.props.title}
+                />
+                <Chatbody
+                    secret = {this.props.secret}
+                />
             </div>
         );
     }

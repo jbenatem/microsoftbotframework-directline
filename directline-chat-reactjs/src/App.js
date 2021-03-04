@@ -1,12 +1,13 @@
 import './App.css';
+import React, {Component} from 'react';
 import WebChat from './components/webchat';
 
-function App() {
-  return (
-    <div>
-      <WebChat/>
-    </div>
-  );
+class App extends Component {
+	render(){
+		return (
+			<WebChat/>
+		);
+	}
 }
 
 export default App;

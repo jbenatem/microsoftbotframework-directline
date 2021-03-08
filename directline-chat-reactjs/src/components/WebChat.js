@@ -8,8 +8,8 @@ class Webchat extends Component{
         title : "React Webchat Sample",
         secret : "",
         imageUrl : "https://i.pinimg.com/originals/c8/c0/1d/c8c01d94b7ffe4073ae847acdca693de.png",
-        buttonColor : "",
-        headerColor : ""
+        buttonColor : "#FF0000",
+        headerColor : "#FF0000"
     }
     
     openChat = () => {
@@ -33,6 +33,7 @@ class Webchat extends Component{
                         closeChat = {this.closeChat}
                         title = {this.state.title}
                         secret = {this.state.secret}
+                        headerColor = {this.state.headerColor}
                         />
                     :null
                 }

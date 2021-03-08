@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Chatheader extends Component{
     render(){
         return(
-            <div className="chatheader">
+            <div className="chatheader" style={{backgroundColor: this.props.headerColor}}>
                 <div className="chatheader-text">
                     <p>{this.props.title}</p>
                 </div>

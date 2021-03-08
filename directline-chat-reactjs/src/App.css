@@ -1,5 +1,4 @@
 .chatbutton{
-  background-color: #FF0000;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -31,7 +30,6 @@
 }
 
 .chatheader{
-  background-color: #FF0000;
   border-radius: 10px 10px 0 0;
   height: 45px;
   width: 100%;

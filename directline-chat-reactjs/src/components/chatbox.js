@@ -9,6 +9,7 @@ class Chatbox extends Component{
                 <Chatheader
                     closeChat = {this.props.closeChat}
                     title = {this.props.title}
+                    headerColor = {this.props.headerColor}
                 />
                 <Chatbody
                     secret = {this.props.secret}

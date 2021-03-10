@@ -27,7 +27,7 @@ function OpenChat() {
     window.WebChat.renderWebChat(
         {
             directLine: window.WebChat.createDirectLine({
-            token: 'uzEqtToqsAY.jFKlI0ltLDzLjq0Kj_lD2YPTDempUQdxriJ7g3GWB-g'
+            token: 'INSERT-DIRECTLINE-TOKEN-HERE'
         }),
         store,
         },

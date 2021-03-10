@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang=en>
+    <head>
+        <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <title>Webchat Demo</title>
+    </head>
+    <body>
+        <div class="chatbot">
+            <div class="chatbutton" id="chatbutton" onclick="OpenChat()">
+                <img class="imagebutton" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Circle-icons-chat.svg/1024px-Circle-icons-chat.svg.png" alt="chatbutton"></img>
+            </div>
+            <div class="chatbox" id="chatbox">
+                <div class="chatheader">
+                    <div class="chatheader-text">
+                        <p>Webchat Demo</p>
+                    </div>
+                    <div class="chatheader-hidebutton" onclick="CloseChat()">
+                        <p>X</p>
+                    </div>
+                </div>
+                <div class="chatbody" id="chatbody" role="main"> 
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -30,18 +30,19 @@ class Webchat extends Component{
                 {
                     this.state.show?
                         <Chatbox 
-                        closeChat = {this.closeChat}
-                        title = {this.state.title}
-                        secret = {this.state.secret}
-                        headerColor = {this.state.headerColor}
+                            closeChat = {this.closeChat}
+                            title = {this.state.title}
+                            secret = {this.state.secret}
+                            headerColor = {this.state.headerColor}
                         />
                     :null
                 }
                 {
                     !this.state.show?
-                        <Chatbutton openChat = {this.openChat}
-                        imageUrl = {this.state.imageUrl}
-                        buttonColor = {this.state.buttonColor}
+                        <Chatbutton 
+                            openChat = {this.openChat}
+                            imageUrl = {this.state.imageUrl}
+                            buttonColor = {this.state.buttonColor}
                         />
                     :null
                 }

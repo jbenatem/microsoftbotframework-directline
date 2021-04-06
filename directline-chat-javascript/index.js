@@ -9,7 +9,7 @@ function createGuid() {
 }  
 
 async function generateDirectLineToken() {
-    const secret = 'uzEqtToqsAY.jFKlI0ltLDzLjq0Kj_lD2YPTDempUQdxriJ7g3GWB-g';
+    const secret = 'INSERT-DIRECT-LINE-SECRET-HERE';
     var guid = createGuid();
     const response = await fetch('https://directline.botframework.com/v3/directline/tokens/generate', {
         method: 'POST',

@@ -1,3 +1,5 @@
+var firstInteraction = true
+
 function createGuid() {  
     function _p8(s) {  
         var p = (Math.random().toString(16)+"000000000").substr(2,8);  
@@ -7,7 +9,7 @@ function createGuid() {
 }  
 
 async function generateDirectLineToken() {
-    const secret = 'INSERT-DIRECTLINE-SECRET-HERE';
+    const secret = 'uzEqtToqsAY.jFKlI0ltLDzLjq0Kj_lD2YPTDempUQdxriJ7g3GWB-g';
     var guid = createGuid();
     const response = await fetch('https://directline.botframework.com/v3/directline/tokens/generate', {
         method: 'POST',
@@ -18,17 +20,12 @@ async function generateDirectLineToken() {
         body: JSON.stringify(
             {
                 "user": {
-                    "id": "dl-" + guid
+                    "id": "dl_" + guid
                 }
             })
     })
-    if (response.status === 200) {
-        var obj = JSON.parse(await response.text());
-        OpenChat(obj.token);
-    }
-    else {
-        console.log(response.statusText);
-    }
+    const { token } = await response.json();
+    return token;
 }
 
 async function refreshDirectLineToken(token) {
@@ -53,34 +50,38 @@ function CloseChat() {
     document.getElementById("chatbutton").style.display = "flex";
 }
 
-function OpenChat(token) {
+async function OpenChat() {
     document.getElementById("chatbutton").style.display = "none";
     document.getElementById("chatbox").style.display = "block";
 
-    // Get welcome message
-    // We are using a customized store to add hooks to connect event
-    const store = window.WebChat.createStore({}, ({ dispatch }) => next => action => {
-        //console.log(action);
-        if (action.type === 'DIRECT_LINE/CONNECT_FULFILLED') {
-            dispatch({
-                type: 'WEB_CHAT/SEND_EVENT',
-                payload: {
-                    name: 'webchat/join',
-                    value: { language: window.navigator.language }
-                }
-            });
-        }
+    if (firstInteraction) {
+        // Get welcome message
+        // We are using a customized store to add hooks to connect event
+        const store = window.WebChat.createStore({}, ({ dispatch }) => next => action => {
+            //console.log(action);
+            if (action.type === 'DIRECT_LINE/CONNECT_FULFILLED') {
+                dispatch({
+                    type: 'WEB_CHAT/SEND_EVENT',
+                    payload: {
+                        name: 'webchat/join',
+                        value: { language: window.navigator.language }
+                    }
+                });
+            }
 
-        return next(action);
-    });
+            return next(action);
+        });
 
-    window.WebChat.renderWebChat(
-        {
-            directLine: window.WebChat.createDirectLine({
-            token: token
-        }),
-        store,
-        },
-        document.getElementById('chatbody')
-    );
+        window.WebChat.renderWebChat(
+            {
+                directLine: window.WebChat.createDirectLine({
+                token: await generateDirectLineToken()
+            }),
+            store,
+            },
+            document.getElementById('chatbody')
+        );
+
+        firstInteraction = false;
+    }    
 }
